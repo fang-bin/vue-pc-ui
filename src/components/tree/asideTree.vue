@@ -13,7 +13,6 @@ export default {
   props: ['theModel'],
   data(){
     return {
-      // actFLag: false,
       defaultArr: [],
     }
   },
