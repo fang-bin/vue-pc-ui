@@ -12,7 +12,6 @@ export default {
 </script>
 
 <style>
-@import './styles/reset.scss';
 .logo{
   margin: 10px auto;
   display: block;

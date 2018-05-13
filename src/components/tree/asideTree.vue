@@ -1,7 +1,7 @@
 <template>
 <div class="aside-tree" ref="asideTree">
   <slot></slot>
-  <ul v-for="(menuItem,index) in theModel" :key="index">
+  <ul v-for="(menuItem,index) in theModel" :key="index" :style="styles">
     <i-tree :model="menuItem" :choose="defaultArr" :indexArr="[]" :indexNum="index" @cancelAct="cancelAct" ref="tree"></i-tree>
   </ul>
 </div>
@@ -10,7 +10,13 @@
 <script>
 import iTree from './iTree';
 export default {
-  props: ['theModel'],
+  props: {
+    theModel: Array,
+    width: {
+      type: Number,
+      default: 200
+    },
+  },
   data(){
     return {
       defaultArr: [],
@@ -26,6 +32,13 @@ export default {
       }
       this.defaultArr = data[0];
     }
+  },
+  computed: {
+    styles (){
+      return {
+        'width': this.width + 'px'
+      }
+    }
   }
 
 }
@@ -34,7 +47,7 @@ export default {
 <style lang="scss" scoped>
 $color-defalut: #333;
 .aside-tree{
-  width: 200px;
+  // width: 200px;
   background-color: #fff;
   box-sizing: border-box;
   padding: 0 10px;

@@ -1,43 +1,34 @@
 <template>
-  <div class="tree">
+  <div class="cro-wrap">
     <aside-tree :theModel="treeData">
       <div class="tree-add">
         <span class="add-icon"></span>
         添加分类
       </div>
     </aside-tree>
-    <div class="content">
-      <h1>参数说明</h1>
-    </div>
+    <des-content :modal="desData"></des-content>
   </div>
 </template>
 
 <script>
+import desContent from '../../components/layCro/desContent';
 import asideTree from '../../components/tree/asideTree';
 import treeJson from './tree.json';
 export default {
   data(){
     return {
-      treeData: treeJson.data
+      treeData: treeJson.data,
+      desData: treeJson.params
     }
   },
   components: {
-    asideTree
+    asideTree,
+    desContent
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.tree{
-  display: flex;
-  justify-content: center;
-  .content{
-    margin-left: 20px;
-    width: 600px;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-}
 .tree-add{
   height: 40px;
   line-height: 40px;

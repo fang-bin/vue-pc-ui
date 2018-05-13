@@ -68,5 +68,15 @@
             "code": "",
             "children": []
         }
+    ],
+    "params": [
+        {
+            "tit":"width",
+            "des":"宽度",
+            "def":200,
+            "type":"Number",
+            "other":[]
+        }
     ]
+
 }
